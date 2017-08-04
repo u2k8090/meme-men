@@ -4,12 +4,16 @@ Wordpressにも対応したいけど、ちょっとしたLPもサクッと作り
 
 そんなあなたへ。
 
+---
+
 ## Require
 + Node.js
 + Webpack
 + Sass
 + Babel [ES6]
 + Vagrant / VCCW
+
+---
 
 ## Documentation
 
