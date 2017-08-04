@@ -14,33 +14,33 @@ Wordpressにも対応したいけど、ちょっとしたLPもサクッと作り
 ## Documentation
 
 ### editor
-+ .editorconfig `俺ルール`
++ .editorconfig
 
 ### npm
-+ package.json `愛すべきパッケージ達`
-+ package-lock.json `依存ファイル`
++ package.json
++ package-lock.json
 
 ### webpack
-+ webpack.config.babel.js  `大黒柱`
-+ /config/**/*.js `webpack設定ファイル（タレ）`
++ webpack.config.babel.js
++ /config/**/*.js
 
 ### Browser-sync
-+ bs-config.js `php or html で切り替え必要`
++ bs-config.js
 
 ### linter
-+ .eslintrc.js `linter設定[airbnb]`
-+ .eslintignore `linter除外指定`
++ .eslintrc.js
++ .eslintignore
 
 ### Babel
-+ .babelrc `ES6`
++ .babelrc
 
 ### Autoprefix
 + .postcss.config.js
 
 ### Vagrant & VCCW
 + Vagrantfile
-+ site.yml `Vagrant設定`
++ site.yml
 + provision/
-+ Movefile `wordmove設定`
++ Movefile
 + ansible.cfg
-+ LISENCE `VCCW`
++ LISENCE
