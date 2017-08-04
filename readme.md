@@ -34,6 +34,9 @@ Wordpressにも対応したいけど、ちょっとしたLPもサクッと作り
 ### Babel
 + .babelrc `ES6`
 
+### Autoprefix
++ .postcss.config.js
+
 ### Vagrant & VCCW
 + Vagrantfile
 + site.yml `Vagrant設定`
