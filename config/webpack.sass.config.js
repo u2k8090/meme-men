@@ -47,7 +47,8 @@ export default {
 							loader : 'css-loader',
 							options: {
 								minimize: true,
-								sourceMap: true
+								sourceMap: true,
+                                url: false
 							}
 						},
 						{
