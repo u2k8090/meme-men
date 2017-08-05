@@ -2,7 +2,7 @@
 なんでもつめこみボイラープレート。
 Wordpressにも対応したいけど、ちょっとしたLPもサクッと作りたい。
 
-そんなあなたへ。
+そんな~~あなた~~わたしへ。
 
 ## Require
 + Node.js
@@ -44,3 +44,4 @@ Wordpressにも対応したいけど、ちょっとしたLPもサクッと作り
 + Movefile
 + ansible.cfg
 + LISENCE
+
