@@ -1,7 +1,9 @@
 // php
 // module.exports = {
-//   "proxy": "https://wimax-broad.dev",
-//   "files": ["./css/**/*.css", "./js/**/*.js", "./**/*.php"]
+//     proxy: "http://XXXXXXX.dev",
+//     files: ["./wp-content/themes/meme/assets/**/*","./wp-content/themes/meme/**/*.php"],
+//     open: 'external',
+//     notify: true
 // }
 
 // html
