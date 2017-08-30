@@ -40,7 +40,14 @@ export default {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel-loader?cacheDirectory=true'
+                }
+            },
+            {
+                test: /\.vue$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'vue',
                 }
             },
             {
@@ -56,6 +63,15 @@ export default {
             }
         ]
     },
+    resolve: {
+        extensions: ['.js', '.vue'],
+        modules: [
+            "node_modules"
+        ],
+        alias: {
+            vue: 'vue/dist/vue.common.js'
+        }
+    },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             compressor: {warnings: false}
@@ -69,6 +85,11 @@ export default {
             complete: "■",
             width: 50,
             clear: false
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
         })
     ]
 }
