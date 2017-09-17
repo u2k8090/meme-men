@@ -1,7 +1,7 @@
 // php
 // module.exports = {
 //     proxy: "http://XXXXXXX.dev",
-//     files: ["./wp-content/themes/meme/assets/**/*","./wp-content/themes/meme/**/*.php"],
+//     files: ["./wordpress/wp-content/themes/meme/assets/**/*","./wordpress/wp-content/themes/meme/**/*.php"],
 //     open: 'external',
 //     notify: true
 // }
