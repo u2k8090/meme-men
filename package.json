@@ -13,8 +13,10 @@
             "dist": "./dist"
         },
         "wordpress": {
-            "enable": false,
-            "dist": "./wordpress/wp-content/themes/meme"
+            "enable": true,
+            "dist": "./wordpress/wp-content/themes/meme",
+            "css": "./wordpress/wp-content/themes/meme/assets/css",
+            "js": "./wordpress/wp-content/themes/meme/assets/js"
         }
     },
     "scripts": {

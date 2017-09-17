@@ -26,7 +26,7 @@ export default {
     entry: entries,
     // 出力設定
     output: {
-        path: wordpress.enable ? path.resolve(wordpress.dist) : path.resolve(dist),
+        path: wordpress.enable ? path.resolve(wordpress.js) : path.resolve(dist),
         filename: '[name].js',
     },
     cache: true,

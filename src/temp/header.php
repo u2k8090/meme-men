@@ -19,19 +19,20 @@
     <link rel=”canonical” href="<?php echo (empty($_SERVER[" HTTPS "]) ? "http:// " : "https:// ") . $_SERVER["HTTP_HOST "] . $_SERVER["REQUEST_URI "]; ?>">
     <!-- canonicalパターン2 -->
     <?php
-if (is_home()) {
-  $canonical_url  = get_bloginfo('url');
-} elseif (is_category()) {
-  $canonical_url=get_category_link(get_query_var('cat'));
-} elseif (is_page() || is_single()) {
-  $canonical_url = get_permalink();
-    } if ( $paged >= 2 || $page >= 2) {
-  $canonical_url = $canonical_url.'page/'.max( $paged, $page ).'/';
-} elseif(is_404()) {
-  $canonical_url =  get_bloginfo('url')."/404";
-} else {
-  $canonical_url  = get_bloginfo('url');
-} ?>
+        if (is_home()) {
+          $canonical_url  = get_bloginfo('url');
+        } elseif (is_category()) {
+          $canonical_url=get_category_link(get_query_var('cat'));
+        } elseif (is_page() || is_single()) {
+          $canonical_url = get_permalink();
+            } if ( $paged >= 2 || $page >= 2) {
+          $canonical_url = $canonical_url.'page/'.max( $paged, $page ).'/';
+        } elseif(is_404()) {
+          $canonical_url =  get_bloginfo('url')."/404";
+        } else {
+          $canonical_url  = get_bloginfo('url');
+        }
+    ?>
         <link rel="canonical" href="<?php echo $canonical_url; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=yes">
         <meta name="format-detection" content="telephone=no">
