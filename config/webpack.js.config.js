@@ -22,6 +22,7 @@ const entries = _.fromPairs(
 let wordpress = config.wordpress;
 
 export default {
+    // mode: 'development',
     // ビルド対象
     entry: entries,
     // 出力設定
@@ -30,7 +31,7 @@ export default {
         filename: '[name].js',
     },
     cache: true,
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     externals: {
         // "jquery": "$"
     },
@@ -73,9 +74,6 @@ export default {
         }
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compressor: {warnings: false}
-        }),
         new WebpackNotifierPlugin({
             title: "JavaScript Build",
             alwaysNotify: true
