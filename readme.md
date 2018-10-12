@@ -27,11 +27,7 @@ Wordpressにも対応したいけど、ちょっとしたLPもサクッと作り
 ### Browser-sync
 + bs-config.js
 
-### linter
-+ .eslintrc.js
-+ .eslintignore
-
-### Babel
+### Babel 
 + .babelrc
 
 ### Autoprefix

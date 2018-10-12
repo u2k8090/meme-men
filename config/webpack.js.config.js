@@ -5,8 +5,8 @@ import path from 'path';
 import _ from 'lodash';
 import glob from 'glob';
 import chalk from 'chalk';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import WebpackNotifierPlugin from 'webpack-notifier';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import ProgressBarPlugin from 'progress-bar-webpack-plugin';
 import { config } from '../package.json';
 
@@ -22,7 +22,7 @@ const entries = _.fromPairs(
 let wordpress = config.wordpress;
 
 export default {
-    // mode: 'development',
+    mode: 'development',
     // ビルド対象
     entry: entries,
     // 出力設定
@@ -41,7 +41,8 @@ export default {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader?cacheDirectory=true'
+                    // loader: 'babel-loader?cacheDirectory=true',
+                    loader: 'babel-loader',
                 }
             },
             {
@@ -49,17 +50,6 @@ export default {
                 exclude: /node_modules/,
                 use: {
                     loader: 'vue',
-                }
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'eslint-loader',
-                    options: {
-                        fix: true,
-                        failOnError: true,
-                    }
                 }
             }
         ]

@@ -8,10 +8,11 @@ import $ from 'jquery';
 const app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue ？?',
+    message: 'MEME-MEN',
   },
 });
 
 $(() => {
   const test = $('p').text();
+  console.log(test);
 });
