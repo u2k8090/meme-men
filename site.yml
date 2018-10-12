@@ -11,8 +11,8 @@ wp_box: vccw-team/xenial64
 #
 # Network Settings
 #
-hostname: hogehoge.dev
-ip: 192.168.33.10
+hostname: hogehoge.test
+ip: 192.168.33.120
 
 #
 # Virtual Machine Settings
@@ -25,7 +25,7 @@ cpus: 2
 #
 version: latest
 lang: ja
-title: hogehoge.dev
+title: hogehoge.test
 multisite: false
 rewrite_structure: /%postname%/
 

@@ -7,7 +7,7 @@ import { config } from '../package.json';
 
 let path = config.assets;
 let wordpress = config.wordpress;
-let temppath = `${path.src}/**/{*.jpg,*.png,*.gif,*.svg,*.css,*.otf}|${path.src}/temp/screenshot.png|${path.src}/temp/*.php`;
+let temppath = `${path.src}/**/{*.jpg,*.png,*.gif,*.svg,*.css,*.otf}`;
 
 cpx.watch(
     temppath,

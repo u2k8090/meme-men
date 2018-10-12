@@ -13,22 +13,24 @@
             "dist": "./dist"
         },
         "wordpress": {
-            "enable": false,
+            "enable": true,
             "dist": "./wordpress/wp-content/themes/meme",
             "css": "./wordpress/wp-content/themes/meme/assets/css",
+            "cssDist": "./wordpress/wp-content/themes/meme",
             "js": "./wordpress/wp-content/themes/meme/assets/js"
         }
     },
     "scripts": {
         "build": "webpack --mode production",
         "server": "browser-sync start --config bs-config.js",
-        "start": "webpack --mode development --watch & npm run server",
+        "start": "webpack --mode development --watch & npm run server & npm run assets:sync",
         "clean": "rimraf ./dist",
-        "assets:sync": "babel-node ./config/node.assets.copy.js --presets es2015"
+        "assets:sync": "npm install -g babel-cli ./config/node.assets.copy.js"
     },
     "private": true,
     "devDependencies": {
         "@babel/core": "^7.1.2",
+        "@babel/node": "^7.0.0",
         "@babel/polyfill": "^7.0.0",
         "@babel/preset-env": "^7.1.0",
         "@babel/register": "^7.0.0",
