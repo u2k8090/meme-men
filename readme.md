@@ -1,41 +1,34 @@
 # meme-templates
-なんでもつめこみボイラープレート。  
-
 
 ## Require
 + Node.js
 + Webpack
 + Sass
 + Babel [ES6]
-+ Vagrant / VCCW
++ Docker
 
 ## Documentation
 
-### editor
-+ .editorconfig
+### start
 
-### npm
-+ package.json
-+ package-lock.json
+```
+docker-compose up
+```
 
-### webpack
-+ webpack.config.babel.js
-+ /config/**/*.js
+### end
 
-### Browser-sync
-+ bs-config.js
+```
+docker-compose down
+```
 
-### Babel 
-+ .babelrc
+### MySQL
 
-### Autoprefix
-+ .postcss.config.js
+#### RESTORE
+```
+docker-compose exec mysql bash -i -c 'cd /home & mysql -u mysql_user -pmysql_pw meme < meme.sql'
+```  
 
-### Vagrant & VCCW
-+ Vagrantfile
-+ site.yml
-+ provision/
-+ Movefile
-+ ansible.cfg
-+ LISENCE
-
+#### export
+```
+docker-compose exec mysql bash -i -c 'cd /home & mysqldump -u mysql_user -pmysql_pw meme > meme.sql'
+```

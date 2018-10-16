@@ -14,10 +14,10 @@
         },
         "wordpress": {
             "enable": true,
-            "dist": "./wordpress/wp-content/themes/meme",
-            "css": "./wordpress/wp-content/themes/meme/assets/css",
-            "cssDist": "./wordpress/wp-content/themes/meme",
-            "js": "./wordpress/wp-content/themes/meme/assets/js"
+            "dist": "./public/wp-content/themes/meme",
+            "css": "./public/wp-content/themes/meme/assets/css",
+            "cssDist": "./public/wp-content/themes/meme",
+            "js": "./public/wp-content/themes/meme/assets/js"
         }
     },
     "scripts": {
@@ -25,7 +25,7 @@
         "server": "browser-sync start --config bs-config.js",
         "start": "webpack --mode development --watch & npm run server & npm run assets:sync",
         "clean": "rimraf ./dist",
-        "assets:sync": "npm install -g babel-cli ./config/node.assets.copy.js"
+        "assets:sync": "babel-node ./config/node.assets.copy.js"
     },
     "private": true,
     "devDependencies": {

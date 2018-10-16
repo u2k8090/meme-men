@@ -1,6 +1,6 @@
 // php
 module.exports = {
-    proxy: "http://hogehoge.test",
+    proxy: "http://localhost:8000",
     files: ["./wordpress/wp-content/themes/meme/assets/**/*","./wordpress/wp-content/themes/meme/**/*.php"],
     open: 'external',
     notify: true
