@@ -13,7 +13,7 @@
             "dist": "./dist"
         },
         "wordpress": {
-            "enable": true,
+            "enable": false,
             "dist": "./public/wp-content/themes/meme",
             "css": "./public/wp-content/themes/meme/assets/css",
             "cssDist": "./public/wp-content/themes/meme",
@@ -44,6 +44,7 @@
         "extract-text-webpack-plugin": "^4.0.0-beta.0",
         "file-loader": "^2.0.0",
         "glob": "^7.1.3",
+        "json-loader": "^0.5.7",
         "mkdirp": "^0.5.1",
         "moment": "^2.22.2",
         "node-sass": "^4.9.3",
