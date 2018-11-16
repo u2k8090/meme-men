@@ -13,10 +13,12 @@
 ### Initial setting
 
 共通設定
+
 1. package.jsonのconfigに記載されているディレクトリパスをプロジェクトに合わせて書き換える
 2. bs-config.jsのディレクトリパスをプロジェクトに合わせて書き換える
 
 Wordpressの場合
+
 3. package.jsonの wordpress > enable を"true"に変更する
 
 その後コマンドを実行する
