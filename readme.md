@@ -52,3 +52,6 @@ docker-compose exec mysql bash -i -c 'cd /home & mysql -u mysql_user -pmysql_pw 
 ```
 docker-compose exec mysql bash -i -c 'cd /home & mysqldump -u mysql_user -pmysql_pw meme > meme.sql'
 ```
+
+
+## test app writeing
