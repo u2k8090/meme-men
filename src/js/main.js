@@ -8,7 +8,7 @@ import $ from 'jquery';
 const app = new Vue({
   el: '#app',
   data: {
-    message: 'MEME-MEN',
+    message: 'MEME_MEN',
   },
 });
 

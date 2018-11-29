@@ -13,7 +13,7 @@
             "dist": "./dist"
         },
         "wordpress": {
-            "enable": true,
+            "enable": false,
             "dist": "./public/wp-content/themes/meme",
             "css": "./public/wp-content/themes/meme/assets/css",
             "cssDist": "./public/wp-content/themes/meme",
