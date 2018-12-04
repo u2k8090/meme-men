@@ -23,7 +23,7 @@
     "scripts": {
         "build": "webpack --mode production",
         "server": "browser-sync start --config bs-config.js",
-        "start": "webpack --mode development --watch & npm run server & npm run assets:sync",
+        "start": "webpack --mode development --watch & yarn run server & yarn run assets:sync",
         "clean": "rimraf ./dist",
         "assets:sync": "babel-node ./config/node.assets.copy.js"
     },
