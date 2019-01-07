@@ -6,7 +6,7 @@ if(wordpress){
   // wordpress site
   module.exports = {
       proxy: "http://localhost:8000",
-      files: ["./wordpress/wp-content/themes/meme/**/*"],
+      files: ["./public/wp-content/themes/meme/**/*"],
       open: 'external',
       notify: true
   }
