@@ -14,7 +14,7 @@
 <!-- wp_head -->
 <?php wp_head(); ?>
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+
 
 <!-- ie -->
 <!--[if lt IE 9]>
@@ -32,25 +32,22 @@
 
 <header id="header" class="header">
   <div class="inr">
-    <div class="header-logo"><a href="<?php echo home_url(); ?>"></a></div>
-    <div class="header-gnav">
+    <div class="header-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="株式会社 古田工藝社"></a></div>
+    <div class="header-gnav" :class="{open: menuFlag}">
       <nav class="gnav__list">
          <ul>
-           <li><a href="<?php echo home_url(); ?>/about/">このサイトについて</a></li>
-           <li><a href="<?php echo home_url(); ?>/boxlayout/">ボックスレイアウト</a></li>
-           <li><a href="<?php echo home_url(); ?>/headline/">見出し</a></li>
-           <li><a href="<?php echo home_url(); ?>/siteparts">サイトパーツ</a></li>
-           <li><a href="<?php echo home_url(); ?>/custom/">カスタム</a></li>
-           <li><a href="<?php echo home_url(); ?>/blog/">ブログ</a></li>
-           <li><a href="<?php echo home_url(); ?>/blog/">電話番号やサブナビを設置</a></li>
+           <li><a href="<?php echo home_url(); ?>">Top</a></li>
+           <li><a href="<?php echo home_url(); ?>/about/">About us</a></li>
+           <li><a href="<?php echo home_url(); ?>/recruit/">Recruit</a></li>
+           <li><a href="<?php echo home_url(); ?>/blog/">Blog</a></li>
+           <li><a href="<?php echo home_url(); ?>/contact/">Contact</a></li>
         </ul>
       </nav>
     </div>
-    <div class="menu">
+    <div class="menu" v-if="spFlag" v-on:click="menuToggle">
       <div class="menu-line"></div>
       <div class="menu-line"></div>
       <div class="menu-line"></div>
     </div>
   </div>
 </header>
-

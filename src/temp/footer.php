@@ -10,6 +10,7 @@
 <!-- wp_footer -->
 <?php wp_footer(); ?>
 <!-- /wp_footer -->
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
 </body>
 
 </html>
