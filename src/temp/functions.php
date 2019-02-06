@@ -12,14 +12,15 @@
     return $output;
   }
 
-  //アイキャッチ画像 有効
-  add_theme_support( 'post-thumbnails' );
-
   // サムネイルサイズ
   if ( function_exists( 'add_image_size' ) ) {
   	add_image_size( 'custom_size',134,134, true );
   	add_image_size( 'custom_size_detail', 300, 300, true );
   }
+
+  //アイキャッチ画像 有効
+  add_theme_support( 'post-thumbnails' );
+
 
   // wp_titleの半角除去
   function my_title_fix($title, $sep, $seplocation){
@@ -30,72 +31,32 @@
   }
   add_filter('wp_title', 'my_title_fix', 10, 3);
 
+  // wp_head内のjQuery除去
+  function my_delete_local_jquery() {
+      wp_deregister_script('jquery');
+  }
+  add_action( 'wp_enqueue_scripts', 'my_delete_local_jquery' );
+
+  // AIOSEO <link rel="prev/next">削除
+  add_filter('aioseop_prev_link', '__return_empty_string' );
+  add_filter('aioseop_next_link', '__return_empty_string' );
 
   // カスタム投稿
   add_action('init', 'my_column_init');
   function my_column_init() {
     register_post_type('column', array(
         'labels' => array(
-        'name' => '基礎知識・コラム',
-        'singular_name' => '基礎知識・コラム',
-        'all_items' => '基礎知識・コラム一覧',
-        'add_new' => '基礎知識・コラム追加',
-        'add_new_item' => '基礎知識・コラムの追加',
-        'edit_item' => '基礎知識・コラムの編集',
-        'new_item' => '基礎知識・コラム追加',
-        'view_item' => '基礎知識・コラムを表示',
-        'search_items' => '基礎知識・コラムを検索',
-        'not_found' =>  '基礎知識・コラムが見つかりません',
-        'not_found_in_trash' => 'ゴミ箱内に基礎知識・コラムが見つかりませんでした。',
-        'parent_item_colon' => ''
-      ),
-      'public' => true,
-      'publicly_queryable' => true,
-      'show_ui' => true,
-      'query_var' => true,
-      'has_archive' => true,
-      'rewrite' => true,
-      'capability_type' => 'post',
-      'hierarchical' => false,
-      'menu_position' => 110110110,
-      'supports' => array('title','editor','author','thumbnail','excerpt','comments')
-    ));
-
-    // (カテゴリーのような) 階層化できる新規分類を追加
-    register_taxonomy('columncat',array('column'), array(
-      'hierarchical' => true,
-      'labels' => array(
-        'name' => 'レシピ分類',
-        'singular_name' => '基礎知識・コラム分類',
-        'search_items' =>  '基礎知識・コラム分類を検索',
-        'all_items' => 'すべての基礎知識・コラム分類',
-        'parent_item' => '親分類',
-        'parent_item_colon' => '親分類：',
-        'edit_item' => '編集',
-        'update_item' => '更新',
-        'add_new_item' => '新規分類を追加',
-        'new_item_name' => '名前',
-      ),
-      'show_ui' => true,
-      'query_var' => true,
-      'rewrite' => array( 'slug' => 'columncat' ),
-    ));
-  }
-  add_action('init', 'my_news_init');
-  function my_news_init() {
-    register_post_type('news', array(
-        'labels' => array(
-        'name' => 'お知らせ',
-        'singular_name' => 'お知らせ',
-        'all_items' => 'お知らせ一覧',
-        'add_new' => 'お知らせ追加',
-        'add_new_item' => 'お知らせの追加',
-        'edit_item' => 'お知らせの編集',
-        'new_item' => 'お知らせ追加',
-        'view_item' => 'お知らせを表示',
-        'search_items' => 'お知らせを検索',
-        'not_found' =>  'お知らせが見つかりません',
-        'not_found_in_trash' => 'ゴミ箱内にお知らせが見つかりませんでした。',
+        'name' => 'コラム',
+        'singular_name' => 'コラム',
+        'all_items' => 'コラム一覧',
+        'add_new' => 'コラム追加',
+        'add_new_item' => 'コラムの追加',
+        'edit_item' => 'コラムの編集',
+        'new_item' => 'コラム追加',
+        'view_item' => 'コラムを表示',
+        'search_items' => 'コラムを検索',
+        'not_found' =>  'コラムが見つかりません',
+        'not_found_in_trash' => 'ゴミ箱内にコラムが見つかりませんでした。',
         'parent_item_colon' => ''
       ),
       'public' => true,
@@ -111,13 +72,13 @@
     ));
 
     // (カテゴリーのような) 階層化できる新規分類を追加
-    register_taxonomy('newscat',array('news'), array(
+    register_taxonomy('columncat',array('column'), array(
       'hierarchical' => true,
       'labels' => array(
-        'name' => 'お知らせ分類',
-        'singular_name' => 'お知らせ分類',
-        'search_items' =>  'お知らせ分類を検索',
-        'all_items' => 'すべてのお知らせ分類',
+        'name' => 'コラム分類',
+        'singular_name' => 'コラム分類',
+        'search_items' =>  'コラム分類を検索',
+        'all_items' => 'すべてのコラム分類',
         'parent_item' => '親分類',
         'parent_item_colon' => '親分類：',
         'edit_item' => '編集',
@@ -127,9 +88,21 @@
       ),
       'show_ui' => true,
       'query_var' => true,
-      'rewrite' => array( 'slug' => 'newscat' ),
+      'rewrite' => array( 'slug' => 'columncat' ),
     ));
   }
+
+  // カスタム投稿の管理画面ページ日付順ソート
+  function set_post_types_admin_order( $wp_query ) {
+    if (is_admin()) {
+      $post_type = $wp_query->query['post_type'];
+      if ( $post_type == 'recruitinfo' ) {
+          $wp_query->set('orderby', 'date');
+          $wp_query->set('order', 'DESC');
+        }
+      }
+    }
+  add_filter('pre_get_posts', 'set_post_types_admin_order');
 
   // カスタム投稿の月別アーカイブ
   global $my_archives_post_type;

@@ -1,8 +1,7 @@
 <?php ?>
 <footer class="footer">
     <div class="container">
-        <div id="copyright">Copyright (c)
-            <?php bloginfo('name'); ?> All Rights Reserved.</div>
+        <div id="copyright">©<?php bloginfo('name'); ?>.</div>
     </div>
 </footer>
 <div class="pagetop"><a href="#">PAGETOP</a></div>
