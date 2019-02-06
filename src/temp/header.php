@@ -33,7 +33,7 @@
 <header id="header" class="header">
   <div class="inr">
     <div class="header-logo"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.svg" alt="株式会社 古田工藝社"></a></div>
-    <div class="header-gnav" :class="{open: menuFlag}">
+    <div class="gnav" :class="{open: menuFlag}">
       <nav class="gnav__list">
          <ul>
            <li><a href="<?php echo home_url(); ?>">Top</a></li>
