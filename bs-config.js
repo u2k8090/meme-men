@@ -15,7 +15,7 @@ if(wordpress){
   module.exports = {
       files: ["./dist/css/**/*.css", "./dist/js/**/*.js", "./**/*.html"],
       server: {
-          "baseDir": "./"
+          "baseDir": "./dist/"
       },
       startpath: 'index.html',
       open: 'external',

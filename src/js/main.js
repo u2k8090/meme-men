@@ -9,10 +9,11 @@ import isMobile from 'ismobilejs';
 Vue.config.devtools = true;
 
 const app = new Vue({
-  el: '#header',
+  el: '#app',
   data: {
     menuFlag: true,
     spFlag: false,
+    message: "meme-men",
     // isPhone: isMobile.any,  // -> not used
     innerWidth: window.innerWidth
   },
@@ -41,6 +42,7 @@ const app = new Vue({
   },
   mounted(){
     // console.log(this.isPhone);
+    this.debugLog();
     this.checkSP();
     window.addEventListener('resize', _.debounce(this.handleResize, 1000));
   },
