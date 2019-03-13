@@ -13,7 +13,7 @@
             "dist": "./dist"
         },
         "wordpress": {
-            "enable": false,
+            "enable": true,
             "dist": "./public/wp-content/themes/meme",
             "css": "./public/wp-content/themes/meme/assets/css",
             "cssDist": "./public/wp-content/themes/meme",
@@ -61,6 +61,8 @@
         "webpack-notifier": "^1.7.0"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.7.1",
+        "ismobilejs": "^0.5.1",
         "jquery": "^3.3.1",
         "lodash": "^4.17.11",
         "sanitize.css": "^8.0.0",
